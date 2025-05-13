@@ -1,0 +1,3 @@
+packer file ẩn trong file out -> giải nén bằng upx -d out -o out.unpacked
+1. Ném file giải nén vào IDA -> shift F12 để xem strings
+2. Sử dụng strings ngay trong WSL để kiểm tra các chuỗi có trong file -> strings out.unpacked | grep -A1 "You entered"

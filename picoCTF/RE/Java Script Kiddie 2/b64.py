@@ -1,0 +1,6 @@
+import base64
+
+b64 = "/H+5/g1yZ0n/AAAN50jbEDtgTtMAn+8KPgAAAELA8kcUjAEJdjVEcvh4nO1JUaK7oH0Ahq1JPEFwDtCjADf8RzB3hnn0Hft0RcDl35vJ3wCdupIAhp2v+wDjfA84If9Sv1AMR7UAqh8BOO+8B87obIkA8XJiCncRVP0iUwLRguMAAF8C4wAAUGEkkUjzOUQjpAwHf7dJGnhx7/z3EWJfOjDVCKMhAwGrQg3sQ5Jxiv7NwJHbnABE0A4C9jj4T9jvywqIk0B6eecGUY617flJiKXzOfF9/AUUkBQoE/+SWTO8TPTaf2uRRNnKKQPHlTsqiPZ7tvL8+kg9fxCvAHmHSYAkcFgIIQB7+gH2ODJYkPBTuhuI0O+j7gGczd35vxHwfGMAE5sA86zkcjDX/xz+M3l6HFrfGRkry/P2LQdz/EiRbNucyBUs0pxlrKGme+dS/wD/0xYoCa3bOpu7kNT13RmpnSsu+T+s0MzJWkuFkfXqMo8gt1S//JCsoaBbKSeAj8Oyl3tyWMVeMwTxbly+Tcf+PyMoa/A+ZYKYj5vHH6L9cNZ2gvxx01rzIiMqWixw6Vee8u1jE6AF3ijLsg6syesK3t+Av0vxJYfZ40VjBUrJZxD7S/lzKRmrIta5/JpfaET1f5xDc90V6ftK/P3VZ6sg6YH75vXO0q2c9rpvw4EH8s9vBgC+kFuj6fra937y8G5s/7B0m3KIKdNl+6X5tTPuuUW1k5fS+Zo+aVV7f+2bX/7q+3QZK+ZbOzgw35Ijv989kyrmb1qDX/WuOfj5/IybX7GeoxmSlTldB3IQ/Da/n7fSee/ABcYeH1tngdtFTskdDJbJlZ2tP9kpANevaT93esvJcTq+MPxVt5P4/Pftz2Py5+U5edT+D1t/HuP2z/ze8AD+rP5wTkSuvGCNjA=="
+data = base64.b64decode(b64)
+with open('out.png', 'wb') as f:
+    f.write(data)

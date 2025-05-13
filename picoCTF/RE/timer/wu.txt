@@ -1,0 +1,4 @@
+unzip your_app.apk -d apk_contents: Giải nén file apk
+apktool d your_app.apk -o decoded_apk: Dịch ngược mã Smali (Mã Java dưới dạng bytecode)
+jadx-gui timer.apk: Dịch sang Java code
+-> tìm flag: picoCTF{}

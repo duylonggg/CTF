@@ -1,0 +1,5 @@
+nm vuln: Hiển thị thông tin các hàm và biến (offset)
+
+base = main_actual - main_offset
+
+win_actual = base + win_offset

