@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dfxml xmloutputversion='1.0'>
+  <metadata 
+  xmlns='http://www.forensicswiki.org/wiki/Category:Digital_Forensics_XML' 
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+  xmlns:dc='http://purl.org/dc/elements/1.1/'>
+    <dc:type>Carve Report</dc:type>
+  </metadata>
+  <creator>
+    <package>PhotoRec</package>
+    <version>7.1</version>
+    <build_environment>
+      <compiler>GCC 6.4, Cygwin 2009.0</compiler>
+      <library name='libext2fs' version='1.43.1'/>
+      <library name='libewf' version='20140608'/>
+      <library name='libjpeg' version='libjpeg-turbo-1.5.0'/>
+      <library name='libntfs' version='10:0:0'/>
+      <library name='zlib' version='1.2.11'/>
+    </build_environment>
+    <execution_environment>
+      <os_sysname>Windows</os_sysname>
+      <os_release>Windows 8 (9200)</os_release>
+      <os_version>Windows 8 (9200)</os_version>
+      <host>LongHD</host>
+      <arch>x86_64</arch>
+      <uid>197609</uid>
+      <start_time>2025-05-15T07:46:18+0700</start_time>
+    </execution_environment>
+  </creator>
+  <source>
+    <image_filename>C:\Users\HADUYL~1\AppData\Local\Temp\Autopsy\dreamhack_20250515_074159\Temp\PhotoRec Carver\1_05-15-2025-07-44-55-0795\Unalloc_4_8466432_209711104</image_filename>
+    <sectorsize>512</sectorsize>
+    <image_size>180477952</image_size>
+    <volume>
+      <byte_runs>
+        <byte_run offset='0' img_offset='0' len='180477952'/>
+      </byte_runs>
+    </volume>
+  </source>
+  <configuration>
+  </configuration>
+  <fileobject>
+    <filename>f0000000.pdf</filename>
+    <filesize>231615</filesize>
+    <byte_runs>
+      <byte_run offset='0' img_offset='0' len='262144'/>
+    </byte_runs>
+  </fileobject>
+</dfxml>

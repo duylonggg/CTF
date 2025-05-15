@@ -1,0 +1,22 @@
+Info: 189 plugins loaded.
+Procesing started. Please wait. This may take a few minutes...
+
+--------------------------------------------------------------------------------------
+ALEAPP v3.1.6: Android Logs, Events, and Protobuf Parser
+Objective: Triage Android Full System Extractions.
+By: Alexis Brignoni | @AlexisBrignoni | abrignoni.com
+By: Yogesh Khatri   | @SwiftForensics | swiftforensics.com
+Building files listing...
+File listing complete - 3 files
+Artifact categories to parse: 189
+File/Directory selected: \\?\C:\Users\HADUYL~1\AppData\Local\Temp\Autopsy\dreamhack_20250515_074159\Temp\aLeapp\fs_1
+
+--------------------------------------------------------------------------------------
+
+Processes completed.
+Processing time = 00:00:00
+
+Report generation started.
+Report generation Completed.
+
+Report location: D:\Documents\CTF_Lab\Dreamhack\Forensics\lolololologfile\Dreamhack\ModuleOutput\aLeapp\2025-05-15 07-45-19 ICT\ALEAPP_Reports_2025-05-15_Thursday_074526
