@@ -4,7 +4,7 @@
 
 ![alt text](image.png)
 
-You will see some functions like GetModuleFileNameA, PathFindFileNameA, and strncmp.
+You will see some functions like `GetModuleFileNameA`, `PathFindFileNameA`, and `strncmp`.
 
 First: `GetModuleFileNameA`
 
