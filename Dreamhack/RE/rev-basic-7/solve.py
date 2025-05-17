@@ -1,0 +1,21 @@
+def rol(val, r_bits, max_bits=8):
+    return ((val << r_bits) | (val >> (max_bits - r_bits))) & (2**max_bits - 1)
+
+byte_140003000 = [
+    0x52, 0xDF, 0xB3, 0x60, 0xF1, 0x8B, 0x1C, 0xB5, 0x57, 0xD1,
+    0x9F, 0x38, 0x4B, 0x29, 0xD9, 0x26, 0x7F, 0xC9, 0xA3, 0xE9,
+    0x53, 0x18, 0x4F, 0xB8, 0x6A, 0xCB, 0x87, 0x58, 0x5B, 0x39,
+    0x1E
+]
+
+flag_bytes = []
+
+for i in range(31):
+    expected = byte_140003000[i]
+    for x in range(256):
+        if i ^ rol(x, i & 7) == expected:
+            flag_bytes.append(x)
+            break
+
+print("Recovered input (ASCII):", bytes(flag_bytes).decode(errors='replace'))
+
