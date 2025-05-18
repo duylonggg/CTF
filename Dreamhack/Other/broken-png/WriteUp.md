@@ -59,8 +59,8 @@ Dùng `HxD` để đọc file ảnh `.png` và sửa file.
 
 ![alt text](image-1.png)
 
-Chúng ta tìm đến đúng offset 0x000c => Đây chính là `IHDR` chunk.
-Length = 13 thì đếm lần lượt 13 byte => Byte ngay sau đấy chính là byte cần sửa
+Chúng ta tìm đến đúng `offset 0x000c` => Đây chính là `IHDR` chunk.
+`Length = 13` thì đếm lần lượt 13 byte => Byte ngay sau đấy chính là byte cần sửa
 
 Sửa thành `c590ce67` như lỗi trả về và lưu lại file.
 
