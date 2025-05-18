@@ -110,3 +110,7 @@ Chúng ta nhận thấy 2 phần này không khớp nhau và nhìn ảnh có v�
 DH{image_height_property}
 
 ![alt text](image-6.png)
+
+## 6. **Tài liệu**
+
+[Wikipedia - PNG](https://en.wikipedia.org/wiki/PNG#%22Chunks%22_within_the_file)
