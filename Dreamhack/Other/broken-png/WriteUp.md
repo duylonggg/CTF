@@ -92,6 +92,8 @@ Byte    | Purpose
 1 byte  | Interland method (phương pháp nội suy)
 ```
 
+---
+
 ## 4. **Sửa**
 
 Theo như lý thuyết trên thì 4 byte đầu chính là chiều rộng `00 00 02 00` và 4 byte sau chính là chiều cao `00 00 01 00`.
@@ -100,7 +102,9 @@ Chúng ta nhận thấy 2 phần này không khớp nhau và nhìn ảnh có v�
 
 ![alt text](image-5.png)
 
-## 6. **Flag**
+---
+
+## 5. **Flag**
 
 DH{image_height_property}
 
