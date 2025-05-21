@@ -98,7 +98,7 @@ void __cdecl listdir(int param_1,undefined4 param_2)
 }
 ```
 
-Có thể thấy rằng nó kiểm tra nếu `param == 1` thì sẽ gọi hàm `decodeBytes`, đây có thể là hàm giải mã và in ra flag 
+Có thể thấy rằng nó kiểm tra nếu `param == 1` thì sẽ gọi hàm `decodeBytes`, đây có thể là hàm giải mã và in ra flag
 
 Chúng ta có thể nhận thấy rằng đây là 1 hàm đệ quy, vậy hãy thử kiểm tra xem hàm này được gọi ở những đâu trong chương trình
 
@@ -136,7 +136,7 @@ void UndefinedFunction_00401afe(void)
 }
 ```
 
-Có vẻ đây sẽ là hàm in ra flag do nó gọi `listdir` với `param = 1`, xem lại ở bên trên thì nếu `param = 1` nó sẽ gọi hàm `decodeByte` --> Khá chắc đây là hàm in ra FlagFlag
+Có vẻ đây sẽ là hàm in ra flag do nó gọi `listdir` với `param = 1`, xem lại ở bên trên thì nếu `param = 1` nó sẽ gọi hàm `decodeByte` --> Khá chắc đây là hàm in ra Flag
 
 Bây giờ chúng ta hãy thử một kỹ thuật mới là đặt breakpoint và nhảy thẳng đến hàm này
 
@@ -146,7 +146,7 @@ Mở `x32dbg` để tiến hành debug
 
 Đầu tiên chúng ta sẽ tìm địa chỉ ngay trước khi gọi `listdir`
 
-Như ảnh trên thì tôi đang ở hàm `puts` gần cuối 
+Như ảnh trên thì tôi đang ở hàm `puts` gần cuối
 
 Anh em kéo lên tí nữa thấy hàm `puts` lúc gọi khi mở file `flag.txt`
 
