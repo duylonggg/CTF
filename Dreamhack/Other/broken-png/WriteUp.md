@@ -21,6 +21,8 @@ File: image.png (13508 bytes)
 ERRORS DETECTED in image.png
 ```
 
+File `.png` là file rất nhạy cảm về mặt dữ liệu, nếu bất kỳ đoạn dữ liệu nào bị sai thì khả năng cao sẽ dẫn đến file không thể mở.
+
 Nói qua về các byte trong file `.png`, file `.png` luôn bắt đầu với 8 bytes đặc trưng:
 
 ```txt
