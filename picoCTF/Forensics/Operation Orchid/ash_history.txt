@@ -1,0 +1,11 @@
+touch flag.txt
+nano flag.txt 
+apk get nano
+apk --help
+apk add nano
+nano flag.txt 
+openssl
+openssl aes256 -salt -in flag.txt -out flag.txt.enc -k unbreakablepassword1234567
+shred -u flag.txt
+ls -al
+halt
