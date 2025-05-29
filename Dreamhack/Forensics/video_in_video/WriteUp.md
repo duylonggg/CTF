@@ -129,7 +129,7 @@ Ta sẽ copy từ offset `0xff9cb` đến hết và lưu vào `video2.mp4`
 
 Sau đó chỉ việc mở `video2.mp4` lên là xong
 
-Anh em nhớ mở bằng app `KMPlayer` nhé 
+Anh em nhớ mở bằng app `KMPlayer` nhé
 
 ---
 
