@@ -57,7 +57,7 @@ Vây rất có khả năng file đã bị hỏng
 
 ---
 
-## 2. Chỉnh sửa 
+## 2. Chỉnh sửa
 
 Mở file `CorruptedDiskImage.raw` bằng `HxD`
 
