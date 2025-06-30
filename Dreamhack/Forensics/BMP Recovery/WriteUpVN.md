@@ -34,7 +34,6 @@ Vậy bây giờ việc chúng ta cần làm là khôi phục lại các byte b�
 
 Chúng ta sẽ đến với phần đầu tiên: **Bitmap file header**
 
-```txt
 | Offset | Kích thước | Trường               | Mô tả                                                              |
 | ------ | ---------- | -------------------- | ------------------------------------------------------------------ |
 | 0x00   | 2 bytes    | `Signature`          | Phải là `BM` (0x42 0x4D) nếu là BMP chuẩn                          |
@@ -53,11 +52,9 @@ Chúng ta sẽ đến với phần đầu tiên: **Bitmap file header**
 | 0x2A   | 4 bytes    | `Y pixels per meter` | Độ phân giải dọc                                                   |
 | 0x2E   | 4 bytes    | `Total colors`       | Số màu dùng (0 nếu tất cả màu được dùng)                           |
 | 0x32   | 4 bytes    | `Important colors`   | Số màu quan trọng (0 = tất cả)                                     |
-```
 
 Sau khi xác định offset của các trường trong 54 byte đầu tiên thì chúng ta tiến hành điền giá trị 1 số trường nhất định vào
 
-```txt
 | Offset | Kích thước | Trường               | Dữ liệu              | Cách tính                                             |
 | ------ | ---------- | -------------------- | ---------------------------------------------------------------------------- |
 | 0x00   | 2 bytes    | `Signature`          | 0x42 0x4D            | Mặc định theo mã ASCII của 'BM'                       |
@@ -76,7 +73,6 @@ Sau khi xác định offset của các trường trong 54 byte đầu tiên thì
 | 0x2A   | 4 bytes    | `Y pixels per meter` | 0x13 0x0B 0x00 0x00  | 72 DPI, chuẩn mặc định                                |
 | 0x2E   | 4 bytes    | `Total colors`       | 0x00 0x00 0x00 0x00  | Thường là 0                                           |
 | 0x32   | 4 bytes    | `Important colors`   | 0x00 0x00 0x00 0x00  | Thường là 0                                           |
-```
 
 Ok vậy là chúng ta đã điền được gần hết
 
