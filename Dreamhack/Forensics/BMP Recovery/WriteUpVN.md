@@ -58,7 +58,7 @@ Sau khi xác định offset của các trường trong 54 byte đầu tiên thì
 | Offset | Kích thước | Trường               | Dữ liệu              | Cách tính                                             |
 | ------ | ---------- | -------------------- | ---------------------------------------------------------------------------- |
 | 0x00   | 2 bytes    | `Signature`          | 0x42 0x4D            | Mặc định theo mã ASCII của 'BM'                       |
-| 0x02   | 4 bytes    | `File size`          | 0xF6 0x58 0xDA 0x00  | Sử dụng lệnh ls -l flag.bmp.broken để xem kích thước  |     
+| 0x02   | 4 bytes    | `File size`          | 0xF6 0x58 0xDA 0x00  | Sử dụng lệnh ls -l flag.bmp.broken để xem kích thước  |
 | 0x06   | 2 bytes    | `Reserved1`          | 0x00 0x00            | Thường là 0                                           |
 | 0x08   | 2 bytes    | `Reserved2`          | 0x00 0x00            | Thường là 0                                           |
 | 0x0A   | 4 bytes    | `Pixel data offset`  | 0x36 0x00 0x00 0x00  | Thường là 54                                          |
