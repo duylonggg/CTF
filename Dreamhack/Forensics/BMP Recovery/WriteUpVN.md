@@ -56,7 +56,7 @@ Chúng ta sẽ đến với phần đầu tiên: **Bitmap file header**
 Sau khi xác định offset của các trường trong 54 byte đầu tiên thì chúng ta tiến hành điền giá trị 1 số trường nhất định vào
 
 | Offset | Kích thước | Trường               | Dữ liệu              | Cách tính                                             |
-| ------ | ---------- | -------------------- | ---------------------------------------------------------------------------- |
+| ------ | ---------- | -------------------- | -------------------- | ----------------------------------------------------- |
 | 0x00   | 2 bytes    | `Signature`          | 0x42 0x4D            | Mặc định theo mã ASCII của 'BM'                       |
 | 0x02   | 4 bytes    | `File size`          | 0xF6 0x58 0xDA 0x00  | Sử dụng lệnh ls -l flag.bmp.broken để xem kích thước  |
 | 0x06   | 2 bytes    | `Reserved1`          | 0x00 0x00            | Thường là 0                                           |
