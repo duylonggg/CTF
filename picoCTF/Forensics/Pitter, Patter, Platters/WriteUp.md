@@ -1,5 +1,7 @@
 # Write Up
 
+## Terminal
+
 Để làm được bài này, chúng ta cần có kiên thức là `Slack Space : Không gian thừa`
 
 Cấu trúc lưu trữ hệ thống file:
@@ -84,13 +86,29 @@ $ xxd -s 0x200400 -l 200 suspicious.dd.sda1
 
 Dùng lệnh đọc ngược flag lên
 
-Ngoài cách kiểm tra chay ở trên thì tôi giới thiệu cho anh em phần mềm `WinHex` một trong số ít phần mềm free mà xem được `Slack Space`
-
-Tôi đã thử qua `AutoPsy` và `FTK Imager` rồi nhưng nó chỉ hiện thị những data được phép xem thôi
-
-![alt text](image.png)
-
 ```bash
 $ od --skip-bytes=0x200437 --read-bytes=66 suspicious.dd.sda1 --format=c --address-radix=n --width=100 | sed "s/\\\0//g" | tr -d " " | rev
 picoCTF{b3_5t111_mL|_<3_cfeb7391}
 ```
+
+---
+
+## WinHex 
+
+Ngoài cách kiểm tra chay ở trên thì tôi giới thiệu cho anh em phần mềm `WinHex` một trong số ít phần mềm free mà xem được `Slack Space`
+
+![alt text](image.png)
+
+---
+
+## AutoPsy
+
+Dể xem `Slack Space` ta có thể tra theo từ khóa `slack`
+
+![alt text](image-1.png)
+
+---
+
+## Flag
+
+Flag: picoCTF{b3_5t111_mL|_\<3_cfeb7391}
