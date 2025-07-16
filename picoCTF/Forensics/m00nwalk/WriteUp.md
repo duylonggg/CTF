@@ -1,7 +1,5 @@
 # Write Up
 
----
-
 ## Kali-tools
 
 Đây là dạng bài `SSTV`
