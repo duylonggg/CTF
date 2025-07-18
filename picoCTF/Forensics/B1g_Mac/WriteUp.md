@@ -143,7 +143,7 @@ Bây giờ chúng ta hãy thử một kỹ thuật mới là đặt breakpoint v
 ![alt text](image.png)
 
 Để tìm nơi đặt breakpoint thì chúng ta sẽ cần hiểu flow chương trình như sau:
-- Set foldername
+- Set giá trị cho `foldername`
 - Mở file `flag.txt`
 - In ra `Work is done!`
 - Gọi `listdir` với `param=0`
