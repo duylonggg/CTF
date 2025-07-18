@@ -17,4 +17,4 @@ done
 
 PIN: 48390513
 
-Flag: 
+Flag: picoCTF{t1m1ng_4tt4ck_914c5ec3}
