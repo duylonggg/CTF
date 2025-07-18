@@ -140,22 +140,23 @@ Có vẻ đây sẽ là hàm in ra flag do nó gọi `listdir` với `param = 1`
 
 Bây giờ chúng ta hãy thử một kỹ thuật mới là đặt breakpoint và nhảy thẳng đến hàm này
 
-Mở `x32dbg` để tiến hành debug
-
 ![alt text](image.png)
 
-Đầu tiên chúng ta sẽ tìm địa chỉ ngay trước khi gọi `listdir`
+Để tìm nơi đặt breakpoint thì chúng ta sẽ cần hiểu flow chương trình như sau:
+- Set foldername
+- Mở file `flag.txt`
+- In ra `Work is done!`
+- Gọi `listdir` với `param=0`
+- Nếu `param=1` thì gọi hàm giải mã
 
-Như ảnh trên thì tôi đang ở hàm `puts` gần cuối
+Ở trong hàm `Undefined` trên chúng ta thấy nó gọi `listdir` với `param=1`, tức là chúng ta chỉ cần cung cấp cho nó `foldername` là được
 
-Anh em kéo lên tí nữa thấy hàm `puts` lúc gọi khi mở file `flag.txt`
+Vậy thì breakpoint chúng ta sẽ đặt ở ngay sau khi truyền giá trị cho `foldername` xong, tức offset `0x00401BDA`
 
-Anh em đặt breakpoint ngay tại đấy vì khi chạy sẽ không có file `flag.txt` nên chương trình sẽ dừng ngay lập tức
-
-Nên chúng ta phải đặt breakpoint tại đây và gọi hàm `Undefined` kia từ đây
+Mở `x32dbg` để tiến hành debug
 
 ```cmd
-SetBPX 00401c20
+SetBPX 00401bda
 ```
 
 ![alt text](image-1.png)
@@ -167,6 +168,10 @@ EIP=00401afe
 ```
 
 ![alt text](image-2.png)
+
+Run tiếp
+
+![alt text](image-3.png)
 
 ---
 
