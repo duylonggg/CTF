@@ -265,3 +265,25 @@ INFO: Finished all ingest tasks for tier 1 of ingest job (data source = disko-3.
 INFO: Finished all ingest tasks for ingest job (data source = disko-3.dd, data source object ID = 1, job ID = 0)
 2025-07-19 10:39:25.037 org.sleuthkit.autopsy.ingest.IngestManager finishIngestJob
 INFO: Ingest job 0 completed at 1752896365037
+2025-07-19 10:46:10.254 org.sleuthkit.autopsy.keywordsearch.Server stopLocalSolr
+INFO: Stopping Solr 8 server
+2025-07-19 10:46:10.255 org.sleuthkit.autopsy.keywordsearch.Server runLocalSolr8ControlCommand
+INFO: Setting Solr 8 directory: C:\Program Files\Autopsy-4.22.1\autopsy\solr
+2025-07-19 10:46:10.256 org.sleuthkit.autopsy.keywordsearch.Server runLocalSolr8ControlCommand
+INFO: Running Solr 8 command: [C:\Program Files\Autopsy-4.22.1\autopsy\solr\bin\autopsy-solr.cmd, stop, -k, jjk#09s, -p, 23232] from C:\Program Files\Autopsy-4.22.1\autopsy\solr
+2025-07-19 10:46:10.344 org.sleuthkit.autopsy.keywordsearch.Server runLocalSolr8ControlCommand
+INFO: Finished running Solr 8 command
+2025-07-19 10:46:10.345 org.sleuthkit.autopsy.keywordsearch.Server stopLocalSolr
+INFO: Waiting for Solr server to stop
+2025-07-19 10:46:12.031 org.sleuthkit.autopsy.keywordsearch.Server stopLocalSolr
+INFO: Finished stopping Solr server
+2025-07-19 10:46:12.032 org.sleuthkit.autopsy.core.Installer <init>
+INFO: core installer created
+2025-07-19 10:46:12.072 org.sleuthkit.autopsy.casemodule.Case closeCurrentCase
+INFO: Closing current case autopsy (autopsy_20250719_103626) in D:\Documents\CTF\picoCTF\Forensics\DISKO 3\autopsy
+2025-07-19 10:46:14.085 org.sleuthkit.autopsy.imagegallery.ImageGalleryController shutDown
+INFO: Shutting down image gallery controller for case autopsy (autopsy_20250719_103626)
+2025-07-19 10:46:14.088 org.sleuthkit.autopsy.imagegallery.datamodel.DrawableDB close
+INFO: Closing the drawable.db
+2025-07-19 10:46:14.091 org.sleuthkit.autopsy.imagegallery.ImageGalleryController shutDown
+INFO: Completed shut down of image gallery controller for case autopsy (autopsy_20250719_103626)

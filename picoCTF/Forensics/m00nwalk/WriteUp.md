@@ -9,6 +9,12 @@ Chúng ta sẽ cần chuyển từ âm thanh qua dạng hình ảnh
 Set up môi trường
 
 ```bash
+$ pactl load-module module-null-sink sink_name=virtual-cable
+```
+
+Mở `pavucontrol`
+
+```bash
 $ pavucontrol
 ```
 
