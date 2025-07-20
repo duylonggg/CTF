@@ -1,0 +1,9 @@
+/NothingSus/
+/favicon.ico
+*
+*
+*
+*
+/NothingSus/duck.png
+/NothingSus/evil_duck.png
+/
