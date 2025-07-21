@@ -8,4 +8,4 @@
 *.mem
 node_modules/
 *.pcapng
-
+*.pcap
