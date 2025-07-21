@@ -7,3 +7,5 @@
 *.vmem
 *.mem
 node_modules/
+*.pcapng
+
