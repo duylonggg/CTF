@@ -6,3 +6,4 @@
 *.dd
 *.vmem
 *.mem
+node_modules/

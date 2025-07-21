@@ -1,0 +1,6 @@
+[Note from internal analyst log]
+
+Final payload suspected to be within the appended 5-second static block.
+Audio encoding is mono, 16-bit, sampled at 44.1kHz.
+
+Suspected total length: ~32 bytes. XOR key recovered from frequency phase analysis.

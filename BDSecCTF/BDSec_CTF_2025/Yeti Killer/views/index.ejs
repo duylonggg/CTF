@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser YAML Parser</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: monospace;
+            resize: vertical;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .output {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .error {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>YAML to JSON Converter</h1>
+    <div class="container">
+        <div style="flex: 1;">
+            <h3>YAML Input:</h3>
+            <textarea id="yamlInput" placeholder="Enter YAML here..."># Example YAML
+person:
+  name: John Doe
+  age: 30
+  hobbies:
+    - hiking
+    - coding
+    - gaming</textarea>
+            <button onclick="parseYaml()">Convert to JSON</button>
+        </div>
+        <div style="flex: 1; padding-left: 1vb;">
+            <h3>JSON Output:</h3>
+            <div class="output" id="jsonOutput">
+                Converted JSON will appear here...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function parseYaml() {
+            const yamlText = document.getElementById('yamlInput').value;
+            const outputDiv = document.getElementById('jsonOutput');
+            
+            try {
+                // Parse YAML using js-yaml
+                const parsedObj = jsyaml.load(yamlText);
+                
+                // Convert to pretty-printed JSON
+                const jsonStr = JSON.stringify(parsedObj, null, 2);
+                
+                // Display the result
+                outputDiv.innerHTML = `<pre>${jsonStr}</pre>`;
+                outputDiv.classList.remove('error');
+            } catch (e) {
+                outputDiv.innerHTML = `<span class="error">YAML Parse Error: ${e.message}</span>`;
+                outputDiv.classList.add('error');
+            }
+        }
+        
+        // Parse initial example on page load
+        window.onload = parseYaml;
+    </script>
+</body>
+</html>
