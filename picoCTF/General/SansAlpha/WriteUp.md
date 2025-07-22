@@ -1,0 +1,11 @@
+# Write Up
+
+```bash
+SansAlpha$ /???/???[!_]64 /????/??????????/??????/????????
+cmV0dXJuIDAgcGljb0NURns3aDE1X211MTcxdjNyNTNfMTVfbTRkbjM1NV80OTQ1NjMwYX0=
+```
+
+```bash
+$ echo "cmV0dXJuIDAgcGljb0NURns3aDE1X211MTcxdjNyNTNfMTVfbTRkbjM1NV80OTQ1NjMwYX0=" | base64 -d
+return 0 picoCTF{7h15_mu171v3r53_15_m4dn355_4945630a}
+```
