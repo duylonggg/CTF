@@ -1,0 +1,3 @@
+# Write Up
+
+Flag: picoCTF{xxsh_0ut_0f_\/\/4t3r_1118a9a4}

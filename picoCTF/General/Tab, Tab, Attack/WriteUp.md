@@ -1,0 +1,3 @@
+# Write Up
+
+Flag: picoCTF{l3v3l_up!_t4k3_4_r35t!_f3553887}
