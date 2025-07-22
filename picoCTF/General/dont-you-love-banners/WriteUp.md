@@ -20,7 +20,9 @@ Cách tạo:
 ln -s path/to/file symlink
 ```
 
-Cách hoạt động: Khi một lệnh hoặc ứng dụng truy xuất đến symlink, hệ thống tệp sẽ tự động chuyển hướng đến file gốc
+Cách kernel xử lý:
+- Khi bạn đọc, mở, hoặc truy vấn metadata của symlink (trừ lệnh trực tiếp lấy thông tin symlink), kernel sẽ theo đường dẫn đó và thực thi thao tác trên file đích.
+- Ví dụ: `cat banner` sẽ in nội dung file `/root/flag.txt` nếu `banner` là symlink trỏ tới đó.
 
 Ứng dụng trong tấn công: Kẻ tấn công có thể thay thế file cần đọc (ví dụ `/home/player/banner`) bằng một symlink trỏ đến file nhạy cảm (`/root/flag.txt`). Khi chương trình chạy với quyền cao đọc symlink, nó vô tình mở file gốc và trả về nội dung
 
