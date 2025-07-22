@@ -12,8 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3039a388-a405-446d-a944-5bee023814fc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Rust fixme 1/fixme1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rust fixme 1/fixme1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Rust fixme 1/fixme1/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rust fixme 1/fixme1/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Forensics/Wireshark doo dooo do doo/shark1.pcapng" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Forensics/Wireshark doo dooo do doo/shark1.pcapng" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Forensics/Wireshark twoo twooo two twoo/shark2.pcapng" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Forensics/Wireshark twoo twooo two twoo/shark2.pcapng" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Forensics/scrambled-bytes/capture.pcapng" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Forensics/scrambled-bytes/capture.pcapng" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,29 +29,29 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="aMETEu60" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="30C9e7PZKnLgiMmjkzgNP0AyEnC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cargo.Run rust_proj.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "D:/Documents/CTF/picoCTF/General/Rust fixme 2/fixme2",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.first.attach.projects": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cargo.Run rust_proj.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/CTF/picoCTF/General/Rust fixme 2/fixme2&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Cargo.Run rust_proj">
     <configuration name="Run rust_proj" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="buildProfileId" value="dev" />
@@ -98,6 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1753120781118</updated>
       <workItem from="1753120782409" duration="124000" />
+      <workItem from="1753156843743" duration="55000" />
     </task>
     <servers />
   </component>
