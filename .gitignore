@@ -1,4 +1,5 @@
 **/venv/
+**/autopsy/
 *.img 
 *.raw
 *.bak
@@ -9,3 +10,4 @@
 node_modules/
 *.pcapng
 *.pcap
+*.evtx
