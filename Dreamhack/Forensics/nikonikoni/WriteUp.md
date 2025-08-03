@@ -56,3 +56,12 @@ Cái ảnh trên cũng bao gồm phần B luôn rồi, nó chính là file `ani.
 
 ## Phần C
 
+![alt text](image-2.png)
+
+> C: 1712417205
+
+---
+
+## Flag
+
+Flag: DH{merong_ani_1712417205}
