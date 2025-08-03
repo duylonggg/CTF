@@ -24,3 +24,9 @@ Nó xảy ra trước cả `Event ID 6005` và thường là dấu hiệu boot t
 | 12       | `Kernel-General`            | OS khởi động xong (hơi trễ hơn ID 14)                             |
 | 6005     | `EventLog`                  | Event log service started (sau khi boot hoàn tất)                 |
 | 4608     | `Security-Auditing`         | Khởi tạo audit security (không phải lúc nào cũng có)              |
+
+---
+
+## Flag
+
+Flag: DH{2024_04_07_00_23_44}
