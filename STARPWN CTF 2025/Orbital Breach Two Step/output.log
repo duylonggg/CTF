@@ -1,0 +1,87 @@
+=== SPWN-1 FLIGHT SOFTWARE v2.0 ===
+Connected to encrypted telemetry processing system
+Commands: status, telemetry <parameter>, calculate <expression>, help, quit
+
+> 
+---SESSION START---
+telemetry /opt/telemetry_*
+Error: Invalid parameter
+Available parameters: altitude, velocity, fuel, temperature, pressure
+System parameters: config, auth_status, key_rotation, satellite_status
+> 
+telemetry /opt/telemetry_*/
+Error: Invalid parameter
+Available parameters: altitude, velocity, fuel, temperature, pressure
+System parameters: config, auth_status, key_rotation, satellite_status
+> 
+telemetry /opt/telemetry_*/data
+Error: Invalid parameter
+Available parameters: altitude, velocity, fuel, temperature, pressure
+System parameters: config, auth_status, key_rotation, satellite_status
+> 
+telemetry /opt/telemetry_*/payload
+Error: Invalid parameter
+Available parameters: altitude, velocity, fuel, temperature, pressure
+System parameters: config, auth_status, key_rotation, satellite_status
+> 
+telemetry /etc/satellite_*
+Querying telemetry for: /etc/satellite_*
+> 
+telemetry /etc/satellite_*/config
+Querying telemetry for: /etc/satellite_*/config
+> 
+telemetry /etc/satellite_*/auth_status
+Querying telemetry for: /etc/satellite_*/auth_status
+> 
+telemetry %x %x %x %x
+Error: Invalid parameter
+Available parameters: altitude, velocity, fuel, temperature, pressure
+System parameters: config, auth_status, key_rotation, satellite_status
+> 
+telemetry %s %s %s
+Error: Invalid parameter
+Available parameters: altitude, velocity, fuel, temperature, pressure
+System parameters: config, auth_status, key_rotation, satellite_status
+> 
+telemetry $(ls /)
+Error: Invalid parameter
+Available parameters: altitude, velocity, fuel, temperature, pressure
+System parameters: config, auth_status, key_rotation, satellite_status
+> 
+telemetry `ls /`
+Error: Invalid parameter
+Available parameters: altitude, velocity, fuel, temperature, pressure
+System parameters: config, auth_status, key_rotation, satellite_status
+> 
+telemetry ../../etc/passwd
+Error: Invalid parameter
+Available parameters: altitude, velocity, fuel, temperature, pressure
+System parameters: config, auth_status, key_rotation, satellite_status
+> 
+telemetry /etc/passwd
+Error: Invalid parameter
+Available parameters: altitude, velocity, fuel, temperature, pressure
+System parameters: config, auth_status, key_rotation, satellite_status
+> 
+calculate 1+1
+Result: > 
+calculate altitude
+Error: Calculation must include numeric values
+Examples: calculate 2+2, calculate 100*5
+Note: System also processes telemetry data calculations
+> 
+calculate altitude+0
+Result: > 
+calculate velocity+fuel
+Error: Calculation must include numeric values
+Examples: calculate 2+2, calculate 100*5
+Note: System also processes telemetry data calculations
+> 
+calculate 1+1; ls /etc
+Result: > 
+calculate 1+1 && ls /opt
+Result: > 
+calculate `ls /opt`
+Result: > 
+calculate $(ls /opt)
+Result: > 
