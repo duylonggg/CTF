@@ -16,8 +16,8 @@ Anh em cũng có thể dùng PrefetchParser (Eric Zimmerman) để xuất ra fil
 
 ```powershell
 # ví dụ, đổi path cho đúng nơi bạn lưu
-.\PrefetchParser.exe "Path\PINBALL.EXE-F192CBC1.pf" --csv > pinball.csv
-.\PrefetchParser.exe "Path\MINESWEEPER.EXE-102B013D.pf" --csv > minesweeper.csv
+.\PrefetchParser.exe "PATH\PINBALL.EXE-F192CBC1.pf" --csv > pinball.csv
+.\PrefetchParser.exe "PATH\MINESWEEPER.EXE-102B013D.pf" --csv > minesweeper.csv
 ```
 
 ![alt text](image-2.png)
