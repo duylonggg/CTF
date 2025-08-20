@@ -1,0 +1,9 @@
+python bruteforce.py \
+  --url "YOUR_URL" \
+  --cookie "YOUR_COOKIE" \
+  --userlist username.txt \
+  --passlist password.txt \
+  --mode bf \
+  --concurrency 30 \
+  --user-field username \
+  --pass-field password
