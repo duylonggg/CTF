@@ -78,7 +78,7 @@ Nó XOR với dữ liệu từ `byte_1401436A0`, anh em lưu đoạn này ra là
 
 ## Script
 
-Thực ra nó còn 1 đoạn tìm mật khẩu nữa, nhưng tôi học được các mới từ VDL :)
+Thực ra nó còn 1 đoạn tìm mật khẩu nữa, nhưng tôi học được các mới từ VDL sau khi cuộc thi kết thúc :)
 
 Anh em lên mạng tìm từ khóa kiểu `Common Key XOR` là có thể ra một vài key rồi thử là đúng luôn
 
