@@ -25,3 +25,4 @@ node_modules/
 *.bin
 *.appinfo
 *.appicon
+*.zip
