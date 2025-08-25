@@ -14,3 +14,14 @@ node_modules/
 *.vmdk
 *.msi
 *.hve
+*.rar
+*.log
+*.nvram
+*.vmsn
+*.vmsd
+*.vmx
+*.vmxf
+*.ad1
+*.bin
+*.appinfo
+*.appicon
