@@ -50,14 +50,14 @@ JustLikeTxt.rar:peanuts
 Giải nén bằng mật khẩu
 
 ```bash
-$ unrar x -ppanuts JustLikeTxt.rar
+$ unrar x -ppeanuts JustLikeTxt.rar
 ```
 
 ---
 
 ## Phân tích file
 
-Sau khi giải nén xong thì sẽ ra rất nhiều file `.txt`, tận 351 file
+Sau khi giải nén xong thì sẽ ra rất nhiều file `.txt`, tận 373 file
 
 Sau khi tôi mở vài file ra đọc thì nhận ra rằng đây có thể là 1 phần của đoạn mã hóa base64 nhưng bị tách nhỏ ra thành các file `.txt`
 
@@ -92,7 +92,7 @@ Sử dụng `Detech It Easy` để xem file được viết bằng ngôn ngữ g
 
 Thay vào đó anh em sử dụng `dotPeek` hoặc `dnPsy`, tôi thì dùng `dotPeek`
 
-Để phân tích thì trước hết là đổi file sang file `.exe` đã
+Để phân tích được thì trước hết là đổi file `.bin` sang file `.exe` đã
 
 ```bash
 $ mv output.bin output.exe

@@ -22,6 +22,6 @@ Anh em paste mã `MD5` lên Virus Total là sẽ thấy được Threat Label
 
 ---
 
-## FlagFlag
+## Flag
 
 Flag: PTITCTF{C:\Users\Hacker\AppData\Roaming\Microsoft\Windows\svhost.exe_0f266b60a2bd1818d752a3b6f3098b1c_2025-07-23T02:56:24Z_trojan}

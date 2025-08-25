@@ -2,7 +2,7 @@
 
 ## Phân tích
 
-Tiếp tục phân tích file `svhost.exe` từ bài trước thì tôi phát hiện nó có nhiều sâu `UPX`
+Tiếp tục phân tích file `svhost.exe` từ bài trước thì tôi phát hiện nó có nhiều xâu `UPX`
 
 Vậy thì anh em sẽ `unpax` thử file này xem sao
 
@@ -18,7 +18,7 @@ $ upx -d svhost.exe -o svhost_unpacked.exe
 
 ---
 
-## Phân tích
+## Phân tích tiếp
 
 Tiếp tục sử dụng IDA để đọc file `svhost_unpacked.exe`
 
