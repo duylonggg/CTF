@@ -276,7 +276,7 @@ Tags:
 
 ---
 
-## Đọc file docxx
+## Đọc file docx
 
 Trong `notepad++` anh em sẽ thấy file `real.txt`
 
