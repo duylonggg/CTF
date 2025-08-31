@@ -1,0 +1,135 @@
+# Write Up
+
+Từ main.rs:
+
+File có cấu trúc:
+SIG="LUNA" → H_START … H_END (header) → D_START … D_END (data/notes) → F_START … F_END (footer).
+
+Kiểu chuỗi:
+0x0b = string UTF-8, 0x0c = byte string; đều theo sau bởi LEB128 length. 0x00 = rỗng.
+
+Header (không quan trọng để lấy flag): db_name (0x0b), version (u32 LE), reg_name (0x0b), reg_date (u64 LE), license_key (0x0c).
+
+Bản ghi Note (trong khối D_START..D_END), tuần tự:
+
+u16 – note_id (LE)
+
+0x0b – access_token
+
+0x0b – first_name
+
+0x0b – last_name
+
+0x0b – email
+
+0x0b – title
+
+u64 – key_index_field = 1 << idx nếu idx < 64, ngược lại 0xFFFFFFFFFFFFFFFF
+
+0x0c – encrypted_content
+
+u64 – creation_date
+
+u64 – modification_date
+
+u8 – suspended (0/1)
+
+Mã hoá nội dung note: DES-ECB + padding PKCS#7 với khoá 8 byte lấy từ footer (F_START..F_END) — footer chỉ là dãy khoá 8-byte nối tiếp nhau. idx trong key_index_field chỉ ra khoá dùng.
+
+=> Chỉ cần:
+
+parse từng note,
+
+lấy chỉ số khoá từ key_index_field,
+
+giải mã encrypted_content bằng DES-ECB/PKCS7,
+
+tìm chuỗi HOLACTF{...}.
+
+---
+
+## Script
+
+```python
+# needs: pip install pycryptodome
+from Crypto.Cipher import DES
+from Crypto.Util.Padding import unpad
+import io, sys
+
+H_START = bytes.fromhex('FF1337FF')
+H_END   = bytes.fromhex('FFCAFEFF')
+D_START = bytes.fromhex('FF7270FF')
+D_END   = bytes.fromhex('FFEDEDFF')
+F_START = bytes.fromhex('FFDEADFF')
+F_END   = bytes.fromhex('FFBEEFFF')
+
+def read_leb128_unsigned(f):
+    res = 0; shift = 0
+    while True:
+        b = f.read(1)
+        if not b: raise EOFError("leb128 eof")
+        b = b[0]
+        res |= ((b & 0x7F) << shift)
+        if not (b & 0x80): break
+        shift += 7
+    return res
+
+def read_field(f, want_bytes=False):
+    flag = f.read(1)
+    if not flag: raise EOFError("flag eof")
+    flag = flag[0]
+    if flag == 0x00:
+        return b'' if want_bytes else ''
+    if flag in (0x0b, 0x0c):
+        n = read_leb128_unsigned(f)
+        data = f.read(n)
+        return data if (flag == 0x0c or want_bytes) else data.decode('utf-8', 'ignore')
+    raise ValueError(f'bad flag {flag:#x}')
+
+def bit_index(u64):
+    if u64 in (0, 0xFFFFFFFFFFFFFFFF): return None
+    return (u64.bit_length() - 1)  # vì chỉ set 1 bit -> idx
+
+with open("secret.lunadb", "rb") as fh:
+    blob = fh.read()
+
+d0 = blob.find(D_START)+len(D_START)
+d1 = blob.find(D_END)
+f0 = blob.find(F_START)+len(F_START)
+f1 = blob.find(F_END)
+
+# footer -> các DES key 8 byte
+keys = [blob[i:i+8] for i in range(f0, f1, 8)]
+
+f = io.BytesIO(blob[d0:d1])
+flag = None
+while f.tell() < (d1 - d0):
+    if (d1 - d0) - f.tell() < 2:
+        break
+    note_id = int.from_bytes(f.read(2), 'little')
+    token   = read_field(f)
+    first   = read_field(f)
+    last    = read_field(f)
+    email   = read_field(f)
+    title   = read_field(f)
+    keyfld  = int.from_bytes(f.read(8), 'little')
+    enc     = read_field(f, want_bytes=True)
+    f.seek(8+8+1, 1)  # skip creation, modification, suspended
+
+    idx = bit_index(keyfld)
+    if idx is None or not enc or idx >= len(keys): 
+        continue
+    pt = unpad(DES.new(keys[idx], DES.MODE_ECB).decrypt(enc), 8, style='pkcs7')
+    s = pt.decode('utf-8', 'ignore')
+    if "HOLACTF{" in s:
+        flag = s.strip('\x00')
+        break
+
+print(flag)
+```
+
+---
+
+## Flag
+
+Flag: HOLACTF{4_c0Ol_Cu5t0m_f1lE_5truC7}
