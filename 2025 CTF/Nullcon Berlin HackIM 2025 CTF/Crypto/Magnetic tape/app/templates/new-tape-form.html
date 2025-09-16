@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Add New Tape</h2>
+<form method="POST" action="{{ url_for('save_tape') }}">
+    <div class="mb-3">
+        <label for="model_id" class="form-label">Model</label>
+        <select class="form-select" name="model_id" id="model_id" required>
+            {% for model in models %}
+            <option value="{{ model.id }}">{{ model.brand }} {{ model.model_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="serial_number" class="form-label">Serial Number</label>
+        <input type="text" class="form-control" id="serial_number" name="serial_number" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select class="form-select" name="status" id="status" required>
+            <option value="AVAILABLE" selected>Available</option>
+            <option value="IN_USE">in use</option>
+            <option value="DECOMMISSIONED">decomissioned</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="location" name="location" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Tape</button>
+    <a href="{{ url_for('tapes_overview') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

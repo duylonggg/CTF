@@ -4,7 +4,7 @@
 
 ![alt text](image.png)
 
-Lọc file pcap phàn protocol `DNS` sẽ thấy nó gửi nhiều truy vấn khá sú
+Lọc file pcap phần protocol `DNS` sẽ thấy nó gửi nhiều truy vấn khá sú
 
 ---
 
@@ -46,7 +46,7 @@ Unzip file `carved.zip` vừa lấy được
 
 ---
 
-## Phân tích 2
+## Phân tích ảnh
 
-Tiếp tục chúng ta sẽ phân tích tiếp folder `unzipped`, có rất nhiều ảnh các con vật ở đây
+Tiếp tục chúng ta sẽ phân tích tiếp folder `unzipped` (ở đây tôi sẽ đổi thành `zoo`), có rất nhiều ảnh các con vật ở đây
 

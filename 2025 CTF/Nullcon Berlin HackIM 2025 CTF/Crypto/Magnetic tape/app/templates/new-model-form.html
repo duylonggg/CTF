@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Add New Tape Model</h2>
+<form method="POST" action="{{ url_for('save_model') }}">
+    <div class="mb-3">
+        <label for="brand" class="form-label">Brand</label>
+        <input type="text" class="form-control" id="brand" name="brand" required>
+    </div>
+    <div class="mb-3">
+        <label for="model_name" class="form-label">Model Name</label>
+        <input type="text" class="form-control" id="model_name" name="model_name" required>
+    </div>
+    <div class="mb-3">
+        <label for="model_number" class="form-label">Model Number</label>
+        <input type="text" class="form-control" id="model_number" name="model_number" required>
+    </div>
+    <div class="mb-3">
+        <label for="capacity" class="form-label">Capacity (in Gibibyte)</label>
+        <input type="number" class="form-control" id="capacity" name="capacity" required>
+    </div>
+    <button type="submit" class="btn btn-success">Save Model</button>
+    <a href="{{ url_for('model_overview') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

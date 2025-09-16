@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Meta 2.0 – Metadata as a Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;600&display=swap');
+
+    /*  ───────────  Base layout  ─────────── */
+    body{
+      font-family:'Poppins',sans-serif;margin:0;min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(circle at 10% 20%,#00d4ff 0%,#6c00ff 100%);color:#fff}
+    header{padding:2rem 1rem 1rem;text-align:center}
+    h1{margin:0;font-size:3rem;font-weight:600}
+    main{flex:1;display:flex;flex-direction:column;align-items:center;gap:2rem;padding:1rem}
+
+    /*  ───────────  Card  ─────────── */
+    .upload-card{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border-radius:16px;padding:2rem 2.5rem;width:100%;max-width:520px;box-shadow:0 12px 32px rgba(0,0,0,.25);display:flex;flex-direction:column;align-items:stretch}
+
+    /* drag area */
+    .upload-area{border:2px dashed rgba(255,255,255,.6);border-radius:12px;padding:2.5rem 1.5rem;text-align:center;cursor:pointer;transition:background .3s,border-color .3s;user-select:none}
+    .upload-area:hover{background:rgba(255,255,255,.1);border-color:#fff}
+    .upload-area p{margin:0;line-height:1.4}
+    #fileInput{display:none}
+
+    /* actions */
+    .actions{display:flex;justify-content:center;margin-top:1.5rem}
+    button{padding:.7rem 1.6rem;border:none;border-radius:8px;background:#ff5e00;color:#fff;font-weight:600;cursor:pointer;transition:background .3s;font-size:1rem}
+    button:hover{background:#ff7700}
+    button:disabled{background:rgba(255,255,255,.25);color:#eee;cursor:not-allowed}
+
+    /* spinner */
+    #spinner{margin-top:1rem;font-size:1rem;display:none}
+
+    /* output panel */
+    .output{width:100%;max-width:860px;background:#0e0e0e;padding:1rem 1.2rem;border-radius:12px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:.9rem;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+    .key{color:#ffb700}
+    .string{color:#37d99e}
+    .number{color:#59b0ff}
+    .boolean{color:#ff8080}
+    .null{color:#ff8080;font-style:italic}
+
+    footer{text-align:center;padding:1rem;font-size:.8rem;opacity:.8}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meta <span style="color:#ffb700;">2.0</span></h1>
+    <p>The future of <em>metadata‑as‑a‑service</em> 🚀</p>
+  </header>
+
+  <main>
+    <div class="upload-card">
+      <label class="upload-area" for="fileInput">
+        <p id="uploadLabel">Click or drag a file here to inspect its soul 👁️</p>
+        <input id="fileInput" type="file" />
+      </label>
+      <div class="actions">
+        <button id="uploadBtn" disabled>Upload &amp; Analyse</button>
+      </div>
+      <div id="spinner">⏳ crunching…</div>
+    </div>
+
+    <pre id="output" class="output" hidden></pre>
+  </main>
+
+  <footer>
+    © 2025 Meta 2.0 – a totally real business venture by <s>Mark Zuckerberg</s> 😉
+  </footer>
+
+<script>
+  const input=document.getElementById('fileInput');
+  const btn=document.getElementById('uploadBtn');
+  const output=document.getElementById('output');
+  const spin=document.getElementById('spinner');
+  const uploadLabel=document.getElementById('uploadLabel');
+
+  input.addEventListener('change',()=>{btn.disabled=!input.files.length;uploadLabel.textContent=input.files.length?'Ready: '+input.files[0].name:'Click or drag a file here to inspect its soul 👁️'});
+
+  document.addEventListener('dragover',e=>e.preventDefault());
+  document.addEventListener('drop',e=>{e.preventDefault();if(e.dataTransfer.files.length){input.files=e.dataTransfer.files;input.dispatchEvent(new Event('change'))}});
+
+  const syntaxHighlight=json=>{
+    if(typeof json!='string'){json=JSON.stringify(json,null,2)}
+    json=json.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,match=>{
+      let cls='number';
+      if(/^"/.test(match)){
+        cls=/:$/.test(match)?'key':'string';
+      }else if(/true|false/.test(match)){
+        cls='boolean';
+      }else if(/null/.test(match)){
+        cls='null';
+      }
+      return '<span class="'+cls+'">'+match+'</span>';
+    });
+  };
+
+  btn.addEventListener('click',async()=>{
+    if(!input.files.length)return;
+    spin.style.display='block';output.hidden=true;btn.disabled=true;
+    const formData=new FormData();formData.append('file',input.files[0]);
+    try{
+      const res=await fetch('/upload',{method:'POST',body:formData});
+      const data=await res.json();
+      output.innerHTML=syntaxHighlight(data);
+      output.hidden=false;
+    }catch(err){
+      output.textContent='Error: '+err;output.hidden=false;
+    }finally{spin.style.display='none';btn.disabled=false;}
+  });
+</script>
+</body>
+</html>

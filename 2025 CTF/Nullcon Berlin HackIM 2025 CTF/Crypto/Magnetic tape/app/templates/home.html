@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container text-center py-5">
+    <h1 class="mb-4">Welcome to TapeTamer™</h1>
+    <p class="lead text-muted mb-4">
+        Your magnetic tape archives are safe with us.<br>
+        Seriously. We’ve read the manuals. Twice.
+    </p>
+
+    <!--
+    <div class="row justify-content-center">
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('model_overview') }}" class="btn btn-outline-primary w-100">
+                📼 View Tape Models
+            </a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('tapes_overview') }}" class="btn btn-outline-secondary w-100">
+                🧾 Manage Tapes
+            </a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('new_tape_form') }}" class="btn btn-outline-success w-100">
+                ➕ Add a New Tape
+            </a>
+        </div>
+    </div>
+    -->
+
+    <hr class="my-5">
+
+    <p class="text-muted small">
+        Proudly preserving dead storage media since... sometime this decade.<br>
+        <em>TapeTamer™ — Because cloud storage is for amateurs.</em>
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Tape Inventory</h2>
+<a href="{{ url_for('new_tape_form') }}" class="btn btn-primary mb-3">Add New Tape</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Serial</th>
+            <th>Status</th>
+            <th>Location</th>
+            <th>Model</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tape in tapes %}
+        <tr>
+            <td>{{ tape.serial_number }}</td>
+            <td>{{ tape.status }}</td>
+            <td>{{ tape.location }}</td>
+            <td>{{ tape.brand_name }} {{ tape.model_name }}</td>
+            <td>
+                <a href="{{ url_for('edit_tape_form', tape_id=tape.id) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
+            </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="5" class="text-muted">No tapes found.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

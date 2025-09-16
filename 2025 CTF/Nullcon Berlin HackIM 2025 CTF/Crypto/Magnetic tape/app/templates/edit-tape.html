@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Edit Tape</h2>
+<form method="POST" action="{{ url_for('update_tape', tape_id=tape.id) }}">
+    <div class="mb-3">
+        <label for="serial_number" class="form-label">Serial Number</label>
+        <input type="text" class="form-control" id="serial_number" value="{{ tape.serial_number }}" disabled>
+    </div>
+
+    <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select class="form-select" name="status" id="status" required>
+            {% for s in statuses %}
+            <option value="{{ s }}" {% if s == tape.status %}selected{% endif %}>{{ s }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="location" name="location" value="{{ tape.location }}" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Tape</button>
+    <a href="{{ url_for('tapes_overview') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

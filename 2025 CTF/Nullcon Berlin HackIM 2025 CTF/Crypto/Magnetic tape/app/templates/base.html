@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TapeTamer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS (v5 CDN) -->
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+        }
+        .sidebar {
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header bar -->
+    <header class="navbar navbar-dark bg-dark px-3">
+        <a href="/" class="navbar-brand">TapeTamer</a>
+        <div class="ms-auto d-flex align-items-center">
+            {% if current_user %}
+                <span class="text-white me-3">Logged in as {{ current_user.username }}</span>
+                <form method="post" target="{{ url_for('logout') }}">
+                    <input type="submit" class="btn btn-outline-light btn-sm" value="Logout">
+                </form>
+            {% else %}
+                <a href="{{ url_for('login_view') }}" class="btn btn-outline-light btn-sm me-2">Login</a>
+                <a href="{{ url_for('register_view') }}" class="btn btn-outline-light btn-sm">Register</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <nav class="col-md-2 bg-light sidebar py-4">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('homepage') }}">Homepage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('tapes_overview') }}">Tapes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('model_overview') }}">Tape Models</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="col-md-10 ms-sm-auto px-4 py-4">
+                <!-- Flash Messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <div class="container mt-3">
+                            {% for category, message in messages %}
+                                {% set alert_class = {
+                                    'message': 'alert-primary',
+                                    'info': 'alert-info',
+                                    'warning': 'alert-warning',
+                                    'error': 'alert-danger'
+                                }[category] if category in ['message', 'info', 'warning', 'error'] else 'alert-secondary' %}
+
+                                <div class="alert {{ alert_class }} alert-dismissible fade show" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+
+                {% block content %}
+                <!-- Page-specific content will go here -->
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+</body>
+</html>

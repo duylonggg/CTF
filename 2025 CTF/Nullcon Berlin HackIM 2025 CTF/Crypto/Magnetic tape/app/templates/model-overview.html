@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Tape Models</h2>
+<a href="{{ url_for('new_model_form') }}" class="btn btn-primary mb-3">Add New Model</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Brand</th>
+            <th>Model Name</th>
+            <th>Model Number</th>
+            <th>Capacity (GB)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for model in models %}
+        <tr>
+            <td>{{ model.brand }}</td>
+            <td>{{ model.model_name }}</td>
+            <td>{{ model.model_number }}</td>
+            <td>{{ model.capacity }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4" class="text-muted">No models found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
