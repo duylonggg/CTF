@@ -214,4 +214,4 @@ print("Decrypted message (ASCII):", message.decode('utf-8', errors='ignore'))
 
 ## Flag
 
-Flag: ``
+Flag: `PTITCTF{Pr1v4t3_K3y_G3n3r4t10n_1s_Fun!}`
