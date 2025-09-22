@@ -30,7 +30,7 @@ Dương Hoàng Anh - B23DCAT007
 
 ## Reverse
 
-[Hà Duy Long - Lawer /Lawer%20😎/WriteUp.md)
+[Hà Duy Long - Lawer](/Lawer%20😎/WriteUp.md)
 
 [Hà Duy Long - Carnival Show - bounty 💸](Reverse/Carnival%20Show%20-%20bounty%20💸/WriteUp.md)
 
