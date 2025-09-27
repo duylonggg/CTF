@@ -1,4 +1,4 @@
-# Tổng hợp Write Up - M3RC3N4RY
+# M3RC3N4RY
 
 ## Thành viên
 
@@ -12,7 +12,19 @@ Dương Hoàng Anh - B23DCAT007
 
 ---
 
-## Crypto
+## Certificate
+
+Debut của cả team
+
+![](Certificate.JPG)
+
+---
+
+## WriteUp
+
+---
+
+### Crypto
 
 [Dương Hoàng Anh - QuackQuack 🦆](Crypto/QuackQuack%20🦆/WriteUp.md)
 
@@ -22,13 +34,13 @@ Dương Hoàng Anh - B23DCAT007
 
 ---
 
-## Forensics
+### Forensics
 
 [Hà Duy Long - Hublot](Forensics/HubLot/WriteUp.md)
 
 ---
 
-## Reverse
+### Reverse
 
 [Hà Duy Long - Lawer](Reverse/Lawer%20😎/WriteUp.md)
 
@@ -36,13 +48,13 @@ Dương Hoàng Anh - B23DCAT007
 
 ---
 
-## Pwnable
+### Pwnable
 
 [Nguyễn Hoàng Anh - Fruit Shop](Pwnable/Fruit%20Shop/WriteUp.md)
 
 ---
 
-## Web
+### Web
 
 [Đỗ Trung Kiên - web_1](Web/web_1/WriteUp.md)
 
